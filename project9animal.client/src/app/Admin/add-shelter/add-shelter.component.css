@@ -1,0 +1,88 @@
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #ffa5004f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+  .form-container h2 {
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #333;
+  }
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      outline: none;
+    }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  background-color: #09090a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+  button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+
+  button:not(:disabled):hover {
+    background-color: forestgreen;
+    transform: translateY(-2px);
+  }
+
+.form-group[_ngcontent-ng-c1279329546] label[_ngcontent-ng-c1279329546] {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #444;
+  text-align: left;
+}
+.form-group[_ngcontent-ng-c2060566439] label[_ngcontent-ng-c2060566439] {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #444;
+  text-align: left;
+}

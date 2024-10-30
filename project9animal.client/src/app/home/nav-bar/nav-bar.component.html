@@ -1,0 +1,213 @@
+<header class="main-header">
+  <!--Header Top-->
+  <!--<div class="header-top">
+    <div class="auto-container">
+      <div class="top-inner">
+        <div class="clearfix">
+          <div class="top-left">
+            <ul class="clearfix">
+              <li><span class="icon flaticon-map-marker"></span>32 Bell South, Harley St. FL</li>
+              <li>
+                <a href="tel:+12345678900">
+                  <span class="icon flaticon-telephone-handle-silhouette"></span>
+                  +(1) 234 567 8900
+                </a>
+              </li>
+              <li>
+                <span class="icon fa fa-envelope"></span>
+              </li>
+            </ul>
+          </div>
+          <div class="top-right clearfix">
+            <div class="donate-box">
+              <a href="donation.html"
+                 class="theme-btn btn-style-one">donate</a>
+            </div>-->
+            <!--social-icon-->
+            <!--<div class="social-icon">
+              <ul class="clearfix">
+                <li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+  <!--Header-Upper-->
+  <div class="header-upper">
+    <div class="auto-container clearfix">
+      <div class="pull-left logo-outer">
+        <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt="" title=""></a></div>
+      </div>
+      <div class="pull-right upper-right clearfix">
+        <div class="nav-outer clearfix">
+          <!-- Main Menu -->
+          <nav class="main-menu">
+            <div class="navbar-header">
+              <!-- Toggle Button -->
+              <button type="button" class="navbar-toggle" data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse">
+                <span><i class="fa fa-bars"></i></span>
+              </button>
+            </div>
+            <div class="navbar-collapse collapse clearfix">
+              <ul class="navigation clearfix ">
+                <li class="current dropdown">
+                  <a routerLink="/">Home</a>
+
+                </li>
+
+                <!--<li class="dropdown">
+    <a routerLink="/dashboard">Dashboard</a>
+
+  </li>-->
+                <!--<li class="dropdown">
+    <a routerLink="/profile">profile</a>
+
+  </li>-->
+                <!--<li class="dropdown">
+    <a href="services.html">Services</a>
+    <ul>
+      <li><a href="pet-service.html">Services 01</a></li>
+      <li><a href="pet-service.html">Services 02</a></li>
+
+    </ul>
+  </li>-->
+
+                <li class="dropdown">
+                  <a routerLink="/ShowAnimals">Animals</a>
+
+                </li>
+
+
+
+
+                <li class="dropdown">
+                  <a routerLink="/app-blog">Blog</a>
+
+                </li>
+
+                <li class="dropdown">
+                  <a routerLink="/contact">Contact</a>
+
+                </li>
+                <li class="dropdown">
+                  <a routerLink="/abuot">About</a>
+
+                </li>
+                <li class="login-button" *ngIf="UserId == ''">
+                  <a routerLink="/login" >login</a>
+                </li>
+
+                <li *ngIf="UserId != ''" class="login-button">
+                  <div class="dropdown">
+                    <a><i class="fas fa-user"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a routerLink="/profile">My Profile</a></li>
+                      <li><a routerLink="/myApplication">My Adoption Application</a></li>
+                      <li><a (click)="logout()">Log Out</a></li>
+                    </ul>
+                  </div>
+                </li>
+
+
+
+              </ul>
+            </div>
+          </nav>
+          <!-- Main Menu End-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Header Upper-->
+  <!--Sticky Header-->
+  <div class="sticky-header">
+    <div class="auto-container clearfix">
+      <!--Logo-->
+      <div class="logo pull-left">
+        <a href="index.html" class="img-responsive">
+          <img src="assets/images/logo-small.png" alt=""
+               title="">
+        </a>
+      </div>
+      <!--Right Col-->
+      <div class="right-col pull-right">
+        <!-- Main Menu -->
+        <nav class="main-menu">
+          <div class="navbar-header">
+            <!-- Toggle Button -->
+            <button type="button" class="navbar-toggle" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse clearfix">
+            <ul class="navigation clearfix">
+              <li class="current dropdown">
+                <a href="#">Home</a>
+
+              </li>
+
+              <!--<li class="dropdown">
+    <a routerLink="/dashboard">Dashboard</a>
+
+  </li>-->
+              <!--<li class="dropdown">
+    <a href="services.html">Services</a>
+    <ul>
+      <li><a href="pet-service.html">Services 01</a></li>
+      <li><a href="pet-service.html">Services 02</a></li>
+
+    </ul>
+  </li>-->
+
+              <li class="dropdown">
+                <a routerLink="/ShowAnimals">Animals</a>
+
+              </li>
+
+
+
+
+              <li class="dropdown">
+                <a routerLink="/app-blog">Blog</a>
+
+              </li>
+              <li class="dropdown">
+                <a href="contact.html">Contact</a>
+
+              </li>
+              <li class="dropdown">
+                <a routerLink="/abuot">About</a>
+
+              </li>
+              <li class="login-button" *ngIf="UserId == ''">
+                <a routerLink="/login">login</a>
+              </li>
+
+              <li *ngIf="UserId != ''" class="login-button">
+                <div class="dropdown">
+                  <a><i class="fas fa-user"></i></a>
+                  <ul class="dropdown-menu">
+                    <li><a routerLink="/profile">My Profile</a></li>
+                    <li><a routerLink="/myApplication">My Adoption Application</a></li>
+                    <li><a (click)="logout()">Log Out</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Main Menu End-->
+      </div>
+    </div>
+  </div>
+  <!--End Sticky Header-->
+</header>
+<!--End Main Header -->

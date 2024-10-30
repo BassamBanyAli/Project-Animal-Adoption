@@ -1,0 +1,106 @@
+.social-links a {
+  color: #555;
+  margin: 0 5px;
+}
+
+
+/* Dropdown menu container */
+.navigation li div ul {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  list-style: none;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  width: 200px; /* Adjust the width as needed */
+}
+
+/* Show the dropdown when hovering over the parent li */
+.navigation li:hover div ul {
+  display: block;
+}
+
+/* Dropdown list items */
+.navigation li div ul li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+  /* Remove border for the last item */
+  .navigation li div ul li:last-child {
+    border-bottom: none;
+  }
+
+  /* Style the dropdown links */
+  .navigation li div ul li a {
+    color: #333;
+    text-decoration: none;
+   
+    display: block;
+  }
+
+    /* Hover effect for dropdown items */
+    .navigation li div ul li a:hover {
+      color: #ff6600; /* Match the orange from your theme */
+    }
+
+/* Icon Style */
+.fas.fa-user {
+  
+  color: #333;
+  padding: 5px;
+}
+
+/* Optional: Adjust hover style for the icon */
+.navigation li:hover .fas.fa-user {
+  color: #ff6600; /* Match with your orange theme */
+}
+
+/*//////*/
+/* Make sure the parent UL is using flex */
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+  .navigation li {
+    list-style: none;
+  
+  }
+
+    /* Specific styling for the icon */
+    .navigation li div a i.fas.fa-user {
+     
+      vertical-align: middle; /* Ensures alignment with text */
+      padding: 0 5px; /* Adjust padding to match the other links */
+    }
+
+   
+
+      /* Hover effect to match other links */
+      .navigation li a:hover {
+        color: #ff6600; /* Your orange theme color */
+      }
+.login-button {
+  margin-left: 244px !important; /* Adjust this value to increase or decrease the space */
+}
+.login-btn {
+  background-color: #ff6600; /* Orange background (you can adjust to your preference) */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding to make it look like a button */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Adjust font size */
+  display: inline-block; /* Ensure it behaves like a button */
+  border: none; /* Remove any border */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+  .login-btn:hover {
+    background-color: #cc5200; /* Darker orange on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+  }
+    

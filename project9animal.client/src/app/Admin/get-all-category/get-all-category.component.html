@@ -1,0 +1,31 @@
+
+<div class="container">
+  <h2>Manage Categories</h2>
+  <button id="showAddCategoryForm" class="btn btn-primary mb-2" routerLink="/dashboard/addAnimalCategory">Add New Category</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.id }}</td>
+        <td>{{ category.name }}</td>
+        <td>{{ category.description }}</td>
+        <td><img src="https://localhost:7269/api/AnimalCategory/getImage/{{category.image}}" width="100" alt="Category Image"></td>
+        <td>
+          <button  routerLink="/dashboard/updatecategory/{{category.id}}" class="btn btn-warning">Edit</button>
+          <button class="btn btn-danger" (click)="deleteCategory(category.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  Modal for Adding or Editing a Category will go here
+</div>

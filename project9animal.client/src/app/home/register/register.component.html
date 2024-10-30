@@ -1,0 +1,125 @@
+<div class="main-wrapper pet register">
+
+
+
+  <div class="pet login">
+    <div class="pet service">
+      <section class="contact">
+        <div class="container">
+          <div class="card">
+            <div class="content">
+              <div class="heading text-center">
+                <p class="wow fadeInUp">
+                  <span class="purple"><i class="fas fa-paw"></i> </span><span class="orange"><i class="fas fa-paw"></i> </span><span class="purple">
+                    <i class="fas fa-paw"></i>
+                  </span>
+                </p>
+                <h3 class="orange">
+                  <span class="wow pulse" data-wow-delay="1s">
+                    Register
+                  </span>
+                </h3>
+              </div>
+              <div class="faq wow fadeInRight mt-4">
+                <form #addUser="ngForm" (ngSubmit)="addNewUser(addUser.value)">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <div class="form-group">
+                        <input type="text" name="fullName" id="fullName" placeholder="Full Name"
+                               class="form-control" required ngModel>
+                      </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <div class="form-group">
+                        <input type="email" name="email" id="email" placeholder="Email"
+                               class="form-control" required ngModel>
+                      </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control"
+                               placeholder="Password" required ngModel>
+                      </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <div class="form-group">
+                        <input type="password" id="confirmpassword" class="form-control"
+                               placeholder="Confirm Password" ngModel required name="ConfirmPassword">
+                      </div>
+                    </div>
+
+                    <div class="link text-center">
+                      have an account?
+                      <a routerLink="/login" class="d-inline-block" title="Register">Login</a>
+
+                    </div>
+                    <!--<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="form-group text-center mt-4">
+      <button  type="submit"><a  routerLink="/login" class="btn form-control">Signup</a></button>
+
+    </div>
+  </div>-->
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <div class="form-group text-center mt-4">
+                        <!-- Corrected button for form submission -->
+                        <button type="submit" class="btn form-control">Signup</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!--<div class="pet">
+    <a id="back2Top" title="Back to top" href="#" class="hvr-radial-in"><i class="fas fa-paw"></i></a>
+  </div>-->
+
+  <!--<div class="color-palate">
+    <div class="color-trigger">
+      <i class="flaticon-pawprint-1"></i>
+    </div>
+    <div class="color-palate-head">
+      <h6>Choose Your Color</h6>
+    </div>
+    <div class="various-color clearfix">
+      <div class="colors-list">
+        <span class="palate default-color active"
+              data-theme-file="css/color-themes/default-theme.css"></span>
+        <span class="palate green-color" data-theme-file="css/color-themes/green-theme.css"></span>
+        <span class="palate blue-color" data-theme-file="css/color-themes/blue-theme.css"></span>
+        <span class="palate orange-color" data-theme-file="css/color-themes/orange-theme.css"></span>
+        <span class="palate purple-color" data-theme-file="css/color-themes/purple-theme.css"></span>
+        <span class="palate teal-color" data-theme-file="css/color-themes/teal-theme.css"></span>
+        <span class="palate brown-color" data-theme-file="css/color-themes/brown-theme.css"></span>
+        <span class="palate redd-color" data-theme-file="css/color-themes/redd-color.css"></span>
+      </div>
+    </div>
+    <a href="#" class="purchase-btn">Purchase now $17</a>
+    <div class="palate-foo">
+      <span>
+        You will find much more options for colors and styling in admin panel. This color picker is used
+        only for
+        demonstation purposes.
+      </span>
+    </div>
+  </div>-->
+
+  <!--<div class="search-popup">
+    <button class="close-search style-two"><img src="images/home_5/cross-out.png" alt=""></button>
+    <button class="close-search"><img src="images/home_5/cross-out.png" alt=""></button>
+    <form method="post" action="https://www.shmai.com/preview/pawrex-html/blog.html">
+      <div class="form-group">
+        <input type="search" name="search-field" value="" placeholder="Search Here" required>
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </form>
+  </div>-->
+
+</div>

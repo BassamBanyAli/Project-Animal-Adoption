@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Manage Testimonials</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Testimonial Message</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let testimonial of testimonials">
+        <td>{{ testimonial.testimonialId }}</td>
+        <td>{{ testimonial.userId }}</td>
+        <td>{{ testimonial.testimonialMessege }}</td>
+        <td>
+          <!-- Show status based on whether it's accepted or rejected -->
+          <span *ngIf="testimonial.isAccept === true" class="text-success">Accepted</span>
+          <span *ngIf="testimonial.isAccept === null" class="text-warning">Pending</span>
+        </td>
+        <td>
+          <!-- Show Accept/Reject buttons only if the status is pending -->
+          <button *ngIf="testimonial.isAccept === false" class="btn btn-success" (click)="acceptTestimonial(testimonial.testimonialId)">Accept</button>
+          <button *ngIf="testimonial.isAccept === false" class="btn btn-danger" (click)="rejectTestimonial(testimonial.testimonialId)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

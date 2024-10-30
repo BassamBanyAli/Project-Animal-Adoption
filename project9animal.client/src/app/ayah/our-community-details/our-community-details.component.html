@@ -1,0 +1,210 @@
+        <!--End Main Header -->
+<!--Page Title-->
+<section class="page-title" style="background-image: url(assets/images/background/7.jpg)">
+  <div class="auto-container">
+    <div class="clearfix">
+      <div class="pull-left">
+        <h1>News Details</h1>
+      </div>
+      <div class="pull-right">
+        <ul class="page-breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li>Blog</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End Page Title-->
+<!--Sidebar Page Container-->
+<div class="sidebar-page-container">
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!--Content Side / Blog Single-->
+      <div class="content-side col-lg-9 col-md-8 col-sm-12 col-xs-12">
+        <div class="blog-single padding-right">
+          <div class="inner-box">
+            <div class="image">
+              <img src="https://localhost:7269/api/Bassam/getImage/{{story.photoUrl1}}" alt="" />
+            </div>
+            <div class="lower-content">
+              <div class="title-box">
+                <div class="date-box">
+                  {{ story.storyDate | date: 'dd' }} <span>{{ story.storyDate | date: 'MMM' }}</span>
+                </div>
+                <h3>{{ story.title }}</h3>
+                <ul class="post-meta">
+                  <li *ngIf="userID && !isItLikedObj"><button class="btn btn-outline-primary" (click)="addLike()">Like</button></li>
+                  <li *ngIf="userID && isItLikedObj"><button class="btn btn-outline-primary" (click)="addLike()">UnLike</button></li>
+              <li>{{commentcount}} Comments</li>
+              <li><span class="icon fa fa-heart"></span> {{like}}</li>
+              </ul>
+            </div>
+            <div class="text">
+
+              <div class="story-text">
+                {{story.storyText}}
+              </div>
+
+            </div>
+            <!--post-share-options-->
+            <div class="post-share-options clearfix">
+              <div class="pull-left tags">
+                <span>Post Tags:</span><a href="#">Pets,</a> <a href="#">Grooming,</a> <a href="#"> Shelter,</a><a href="#"> Breeds</a>
+
+              </div>
+              <div class="pull-right social-icon-four clearfix">
+                <span class="share">Share</span>
+                <a href="https://twitter.com/intent/tweet?text=Check+out+this+awesome+content!&url={{ pageUrl }}" (click)="openTwitterShare($event)" class="twitter-share">
+                  <span class="fab fa-twitter" ></span>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ pageUrl }}" (click)="openFacebookShare($event)" class="facebook-share">
+                  <span class="fab fa-facebook-square" ></span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Comments Area-->
+      <div class="comments-area">
+        <div class="group-title">
+          <h2>Comments</h2>
+        </div>
+
+        <!-- Comment Box -->
+        <div class="comment-box" *ngFor="let item of comment; let i = index">
+          <div class="comment">
+            <div class="author-thumb">
+              <img src="assets/images/icons/icon-yellow.png" alt="author">
+            </div>
+            <div class="comment-inner">
+              <div class="comment-info clearfix" style="text-align: left;">
+                <strong>{{ item.userName ? item.userName : 'No User Name' }}</strong>
+                <div class="comment-time">
+                  {{ item.commentDate | date: 'MMMM d, yyyy' }}
+                </div>
+              </div>
+
+              <!-- Displaying the Comment Text -->
+              <div class="text" style="text-align: left;">
+                {{ item.comment1 }}
+              </div>
+
+              <!-- Reply Toggle Button -->
+              <a class="comment-reply" (click)="toggleReplyForm(i)">Reply</a>
+
+              <!-- Replies Section -->
+              <div class="replies" *ngIf="item.replies?.length > 0">
+                <div class="reply-box" *ngFor="let reply of item.replies">
+                  <div>
+                    <img src="assets/images/icons/gray-icon.png" alt="reply-author" class="test">
+                  </div>
+                  <div class="reply-inner">
+                    <div class="comment-info clearfix" style="text-align: left;">
+                      <strong>{{ reply.userName ? reply.userName : 'No User Name' }}</strong>
+                      <div class="comment-time">
+                        {{ reply.commentDate | date: 'MMMM d, yyyy' }}
+                      </div>
+                    </div>
+
+                    <div class="text" style="text-align: left;">
+                      {{ reply.comment }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reply Form -->
+              <div *ngIf="showReplyForm[i]" class="reply-form">
+                <div *ngIf="userID">
+                  <form #replyForm="ngForm" (ngSubmit)="addReply(i, replyForm.value, item.commentId)">
+                    <input type="hidden" name="commentId" value="{{item.commentId}}" />
+                    <textarea name="comment" ngModel required class="reply-form-textarea"></textarea>
+                    <button type="submit" class="theme-btn btn-style-four">Submit Reply</button>
+                  </form>
+                </div>
+                <div *ngIf="!userID">
+                  Please Log In First To Join The Conversation
+                </div>
+              </div>
+              <!-- End of Reply Form -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Comments Area-->
+      <!-- Comment Form -->
+      <div *ngIf="userID">
+        <div class="comment-form">
+          <div class="group-title">
+            <h2>Leave Reply</h2>
+          </div>
+          <form #leaveComment="ngForm" (ngSubmit)="addComment(leaveComment.value)">
+            <div class="row clearfix">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                <textarea name="comment1" placeholder="Comments" ngModel></textarea>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                <button class="theme-btn btn-style-four" type="submit" name="submit-form">
+                  leave
+                  a comment
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div *ngIf="!userID">
+        Please Log In First To Join The Conversation
+      </div>
+    </div>
+      <!--Sidebar Side-->
+      <div class="sidebar-side col-lg-3 col-md-4 col-sm-12 col-xs-12">
+        <aside class="sidebar">
+         
+          <!--Blog Category Widget-->
+          <div class="sidebar-widget adoption">
+            <div class="sidebar-title">
+              <h2>For Adoptions</h2>
+            </div>
+            <div class="row clearfix">
+              <div *ngFor="let item of categoryAnimal" class="hello">
+                <a routerLink="/AnimalsDetails/{{item.animalId}}" data-fancybox="images" data-caption=""
+                   class="lightbox-image">
+                  <img src="https://localhost:7269/api/Animals1/getImages/{{item.image1}}" alt="" class="fixed-image" />
+                </a>
+              </div>
+            </div>
+          </div>
+         
+          <!-- Popular Posts -->
+          <div class="sidebar-widget popular-posts" style="text-align: left;">
+            <div class="sidebar-title">
+              <h2>Recent Posts</h2>
+            </div>
+            <article class="post" *ngFor="let item of resent">
+              <figure class="post-thumb">
+                <a (click)="goTo(item.storyId)">
+                  <img src="https://localhost:7269/api/Bassam/getImage/{{item.photoUrl1}}" alt="">
+                </a>
+              </figure>
+              <div class="text">
+                <a (click)="goTo(item.storyId)">
+                  {{ item.title }}
+                </a>
+
+              </div>
+              <div class="post-info">{{ item.date | date:'MMMM d, yyyy' }}</div>
+            </article>
+
+          </div>
+        </aside>
+      </div>
+      <!--End Sidebar Side-->
+    </div>
+  </div>
+</div>
+

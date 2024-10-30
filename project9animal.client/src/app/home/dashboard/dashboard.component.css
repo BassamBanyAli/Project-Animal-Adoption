@@ -1,0 +1,7 @@
+.bg-dark .nav-link {
+  color: white !important;
+}
+
+  .bg-dark .nav-link:hover {
+    color: #FFA500 !important;
+  }

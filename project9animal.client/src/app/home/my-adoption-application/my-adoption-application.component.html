@@ -1,0 +1,25 @@
+<div class="container" *ngIf="userAdoptionApplicationArray?.length">
+  <h3>Your Adoption Application</h3>
+
+  <table class="table table-bordered table-striped table-hover" style="width: 100%; margin-top: 20px;">
+    <thead>
+      <tr>
+      
+        <th>Adopter Name</th>
+        <th>Animal Image</th>
+        <th>Application Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userAdoptionApplicationArray">
+        
+        <td>{{item.adopterName}}</td>
+        <td><img src="https://localhost:7269/api/Animals1/getImages/{{item.animalImage}}" alt="Animal Image" class="img-fluid" width="50"></td>
+        <td>{{item.applicationDate | date: 'yyyy-MM-dd'}}</td>
+        <td>{{item.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

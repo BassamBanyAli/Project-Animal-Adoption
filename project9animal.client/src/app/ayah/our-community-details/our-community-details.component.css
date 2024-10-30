@@ -1,0 +1,88 @@
+.story-text {
+  white-space: pre-wrap; /* This ensures that whitespace and line breaks are preserved */
+  font-family: inherit; /* Uses the default font of the surrounding text */
+  font-size: inherit; /* Keeps the default font size */
+  line-height: 1.6; /* Adjusts the line height for readability */
+  text-align:justify;
+}
+
+.btn-outline-primary {
+  color: #e7470c;
+  border-color: #e7470c;
+}
+  .btn-outline-primary:hover {
+    background-color: #e7470c;
+    color: white;
+  }
+
+.btn {
+  padding: .15rem 0.75rem;
+}
+
+/* Reply image */
+.sidebar-page-container .comments-area .comment-box .replies .reply-box .author-thumb img {
+  width: 40px; /* Smaller size for replies */
+  height: 40px;
+  border-radius: 50%; /* Circular shape */
+  margin-right: 10px; /* Space between the image and reply text */
+  float: left; /* Ensure it aligns left of the reply text */
+}
+.reply-box {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+img.test {
+  border-radius: 50%;
+  width: 50px;
+  margin-right: 10px;
+}
+.replies {
+  margin-left: -5px;
+}
+
+.reply-time {
+  position: relative;
+  font-size: 12px;
+  color: #666666;
+  margin-left: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+
+.reply-form-textarea {
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height: 26px;
+  padding: 10px 25px;
+  color: #393939;
+  border: 1px solid #dddddd;
+  font-weight: 600;
+  background: #ffffff;
+  resize: none;
+  border-radius: 15px;
+  -webkit-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  transition: all 300ms ease;
+  margin-bottom: 20px;
+}
+.comment-form .form-group textarea {
+  color: #393939;
+  font-weight: 600;
+}
+
+.hello {
+  display: contents;
+}
+.fixed-image {
+  width: 200px; /* Set a fixed width */
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* This ensures the image covers the area without distortion */
+  position: relative; /* You can change this based on your layout needs */
+  display: block; /* Ensures block-level behavior for the image */
+}

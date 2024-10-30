@@ -1,0 +1,124 @@
+<!--Appointment Section-->
+<section class="appointment-section" style="background-image:url(images/background/3.png)">
+  <div class="auto-container">
+    <!--Sec Title-->
+    <div class="sec-title light centered">
+      <div class="separator">
+        <span class="icon flaticon-pawprint-1"></span>
+      </div>
+      <div class="title">Because We Believe Every Pet Deserves a Home</div>
+      <h2>Adopt a Pet</h2>
+    </div>
+    <!--Default Form-->
+    <div class="default-form">
+      <div class="form-box">
+        <form  #addrequest="ngForm" (ngSubmit)="addNewAdoptionform(addrequest.value,animalDetails.animalId,userDetails.userId)">
+          <div class="row clearfix">
+
+
+            <!--<input type="text" name="animalId" value="{{animalDetails.animalId}}" required ngModel>-->
+
+            <!--<input type="hidden" name="animalId" [value]="animalDetails?.animalId" ngModel required>
+            <input type="hidden" name="userId" [value]="userDetails?.userId" ngModel required>-->
+
+            <!--<input type="text" name="userId" value="{{userDetails.userId}}" required ngModel >-->
+
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="animal_name" class="text-white">Animal Name</label>
+              <input type="text" name="name" value="{{animalDetails.name}}" required>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="animal_age" class="text-white">Animal Age</label>
+              <input type="text" name="age" value="{{animalDetails.age}}" required>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="breed" class="text-white">Breed</label>
+              <input type="text" name="breed" value="{{animalDetails.breed}}" required>
+            </div>
+
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="size" class="text-white">Animal Size</label>
+              <input type="text" name="size" value=" {{animalDetails.size}}" required>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="temperament" class="text-white">Temperament</label>
+              <input type="text" name="temperament" value="{{animalDetails.temperament}}" required>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="description" class="text-white">Description</label>
+              <input type="text" name="description" value="{{animalDetails.description}}" required>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="shelter_name" class="text-white">Shelter Name</label>
+              <input type="text" name="shelterName" value="{{animalDetails.shelter.shelterName}}" required>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="shelter_phone" class="text-white">Shelter Phone #</label>
+              <input type="text" name="address" value="{{animalDetails.shelter.phone}}" required>
+            </div>
+
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="shelter_address" class="text-white">Shelter Address</label>
+              <input type="text" name="phone" value="{{animalDetails.shelter.address}}" required>
+            </div>
+            <!-- Adopter Info -->
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="full_name" class="text-white">Full Name</label>
+              <input type="text" name="fullName" [(ngModel)]="userDetails.fullName" required>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="your_address" class="text-white">Your Address</label>
+              <input type="text" name="address" [(ngModel)]="userDetails.address" required >
+            </div>
+            <!-- Dropdown: Financial Status -->
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="financial_status" class="text-white">Financial Status</label>
+              <select name="finaincalStatus" required [(ngModel)]="userDetails.finaincalStatus">
+                <option value="" disabled selected>Financial Status</option>
+                <option value="high_income">High Income</option>
+                <option value="low_income">Low Income</option>
+                <option value="moderate">Moderate</option>
+                <option value="stable">Stable</option>
+              </select>
+            </div>
+            <!-- Dropdown: Flat Type -->
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="flat_type" class="text-white">Flat Type</label>
+              <select name="flatType" required [(ngModel)]="userDetails.flatType">
+                <option value="" disabled selected>Flat Type</option>
+                <option value="townhouse">Townhouse</option>
+                <option value="villa">Villa</option>
+                <option value="flat">Flat</option>
+                <option value="house">House</option>
+                <option value="apartment">Apartment</option>
+              </select>
+            </div>
+            <!-- Dropdown: Have Kids -->
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="have_kids" class="text-white">Have Kids</label>
+              <select name="haveKids" required [(ngModel)]="userDetails.haveKids">
+                <option value="" disabled selected>Have Kids</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+              <label for="medical_status" class="text-white">Medical Status</label>
+              <input type="text" name="medicalStatus" [(ngModel)]="userDetails.medicalStatus" required >
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+              <label for="more_details" class="text-white">More details</label>
+              <textarea name="moreDetails" [(ngModel)]="userDetails.moreDetails"> </textarea>
+            </div>
+            <div class="form-group text-center col-md-12 col-sm-12 col-xs-12">
+              <button type="submit" class="theme-btn btn-style-two">Send request</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--End Default Form-->
+  </div>
+</section>
+<!--End Appointment Section-->

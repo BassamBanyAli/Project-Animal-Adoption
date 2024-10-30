@@ -1,0 +1,56 @@
+<section class="page-title" style="background-image:url(images/background/7.jpg)">
+  <div class="auto-container">
+    <div class="clearfix">
+      <div class="pull-left">
+        <h1>Our News</h1>
+      </div>
+      <div class="pull-right">
+        <ul class="page-breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li>Blog</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End Page Title-->
+<!--Blog Page Section-->
+<section class="blog-page-section">
+  <div class="auto-container">
+    <div class="row clearfix">
+
+      <!-- Flex container to align button to the left -->
+      <div class="d-flex justify-content-start" style="margin-top: 20px; margin-bottom: 30px;">
+        <button class="theme-btn btn-style-eight"
+                (click)="navigateBasedOnUserId()">
+          Add Your Success Story
+        </button>
+      </div>
+
+      <!--News Block-->
+      <div *ngFor="let story of successStories" class="news-block-two col-md-6 col-sm-12 col-xs-12">
+        <div class="inner-box">
+          <div class="image">
+            <a routerLink="/OurCommunityDetails/{{story.storyId}}">
+              <img src="https://localhost:7269/api/Bassam/getImage/{{story.photoUrl1}}" alt="Story Image" height="240" />
+            </a>
+
+            <div class="post-date">{{ story.storyDate | date: 'dd' }} <span>{{ story.storyDate | date: 'MMM' }}</span></div>
+          </div>
+          <div class="lower-content">
+           
+            <h3><a href="blog-single.html">{{ story.title }}</a></h3>
+            <div class="text">
+              {{ story.storyText | slice: 0:150 }}...  <!-- Displaying a snippet -->
+            </div>
+            <a routerLink="/OurCommunityDetails/{{story.storyId}}" class="theme-btn btn-style-eight">read more</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+<!--End Blog Page Section-->

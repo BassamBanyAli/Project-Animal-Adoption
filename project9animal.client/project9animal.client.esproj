@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.784122">
+  <PropertyGroup>
+    <StartupCommand>npm start</StartupCommand>
+    <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
+    <!-- Allows the build (or compile) script located on package.json to run on Build -->
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+    <!-- Folder where production build objects will be placed -->
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\project9animal.client\browser\</BuildOutputFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\app\Admin\ayah\" />
+    <Folder Include="src\app\Bassam\BassamUrl\" />
+    <Folder Include="src\app\ayah\" />
+    <Folder Include="src\app\Duha\" />
+    <Folder Include="src\app\services\" />
+    <Folder Include="src\app\RamaURL\" />
+    <Folder Include="src\app\leen\" />
+    <Folder Include="src\app\URL-serices\" />
+  </ItemGroup>
+</Project>

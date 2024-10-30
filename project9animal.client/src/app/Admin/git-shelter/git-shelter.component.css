@@ -1,0 +1,70 @@
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.img-thumbnail {
+  border-radius: 10%;
+}
+
+.table > thead > tr > th {
+  border-bottom: medium none;
+  color: black;
+  vertical-align: bottom;
+  padding-left: 48px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.container {
+  max-width: 100%;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.table {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thead-dark th {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s;
+}
+
+  .table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+.btn {
+  margin: 0 5px;
+}
+.btn-lg {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.btn[_ngcontent-ng-c2270500240] {
+  margin: 0 5px;
+  width: 72px;
+}
+.btn-lg[_ngcontent-ng-c3928872709] {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: green;
+  width: 154px;
+}
+

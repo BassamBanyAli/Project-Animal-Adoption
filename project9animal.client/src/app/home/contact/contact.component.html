@@ -1,0 +1,102 @@
+  <!--Page Title-->
+<section class="page-title" style="background-image: url(assets/images/background/7.jpg)">
+  <div class="auto-container">
+    <div class="clearfix">
+      <div class="pull-left">
+        <h1>Pawrex Contact</h1>
+      </div>
+      <div class="pull-right">
+        <ul class="page-breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End Page Title-->
+
+<div class="pet service">
+  <section class="contact">
+    <div class="container">
+      <div class="heading text-center">
+        <p class="wow fadeInUp">
+          <span class="purple"><i class="fas fa-paw"></i> </span><span class="orange"><i class="fas fa-paw"></i> </span><span class="purple">
+            <i class="fas fa-paw"></i>
+          </span>
+        </p>
+        <h2>Get In <span class="wow pulse" data-wow-delay="1s"> Touch </span></h2>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-8 col-md-12 col-sm-12">
+          <div class="faq wow fadeInRight">
+            <form #contactForm="ngForm" (ngSubmit)="contactpost(contactForm.value)" novalidate>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Name" ngModel
+                           required>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <input type="email" name="email" id="email" placeholder="Email" ngModel
+                           class="form-control" required>
+                  </div>
+                </div>
+               
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <input type="text" id="subject" class="form-control" name="Sub" ngModel
+                           placeholder="Subject" required>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <textarea name="message" id="comment" class="form-control" ngModel
+                              placeholder="Your Comments"></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <button type="submit" class="btn form-control">Submit Now</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="details">
+            <ul>
+              <li>
+                <h5>Address: </h5>
+                <p>52A, Tailstoi Town 5238 La city, IA 85796</p>
+              </li>
+              <li>
+                <h5>Phone: </h5>
+                <p><a href="tel:+12345678900">+(1) 234 567 8900 </a></p>
+              </li>
+              <li>
+                <h5>Email:</h5>
+                <p><a href="mailto:support@pawrex.com"> supportpawrex.com </a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="map">
+  <iframe width="100%" height="500"
+          src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(Pets%20Event)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+          frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+    <a href="https://www.maps.ie/create-google-map/">
+      Create Google
+      Map
+    </a>
+  </iframe>
+</section>

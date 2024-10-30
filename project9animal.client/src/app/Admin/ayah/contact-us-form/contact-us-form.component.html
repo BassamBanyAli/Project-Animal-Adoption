@@ -1,0 +1,52 @@
+<form #UpdateFormRawa="ngForm" (ngSubmit)="UpdateContactAdmin(UpdateFormRawa.value, contactObj?.id)" style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #ffa5004f;">
+  <h2 style="text-align: center; margin-bottom: 20px;">Reply To Message</h2>
+
+  <!-- Animal ID Field -->
+  <input type="hidden" name="animalId" ngModel [value]="contactObj?.id">
+
+  <!-- Name Field -->
+  <div class="form-group" style="margin-bottom: 15px;">
+    <label for="name" class="form-label" style="display: block; font-weight: bold; margin-bottom: 5px;">Name</label>
+    <input type="text" id="name" name="name" class="form-control" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" ngModel [value]="contactObj?.name" readonly>
+    <span class="text-danger" id="name-error" style="color: red; font-size: 0.875em;"></span>
+  </div>
+
+  
+  <!-- Breed Field -->
+  <div class="form-group" style="margin-bottom: 15px;">
+    <label for="breed" class="form-label" style="display: block; font-weight: bold; margin-bottom: 5px;">Email</label>
+    <input type="text" id="breed" name="email" class="form-control" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" ngModel [value]="contactObj?.email" readonly>
+    <span class="text-danger" id="breed-error" style="color: red; font-size: 0.875em;"></span>
+  </div>
+
+  <!-- Age Field -->
+  <div class="form-group" style="margin-bottom: 15px;">
+    <label for="age" class="form-label" style="display: block; font-weight: bold; margin-bottom: 5px;">Subject</label>
+    <input type="text" id="age" name="subject" class="form-control" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" ngModel [value]="contactObj?.subject" readonly>
+    <span class="text-danger" id="age-error" style="color: red; font-size: 0.875em;"></span>
+  </div>
+
+  <!-- Size Field -->
+  <div class="form-group" style="margin-bottom: 15px;">
+    <label for="size" class="form-label" style="display: block; font-weight: bold; margin-bottom: 5px;">Message</label>
+    <input type="text" id="size" name="message" class="form-control" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" ngModel [value]="contactObj?.message" readonly>
+    <span class="text-danger" id="size-error" style="color: red; font-size: 0.875em;"></span>
+  </div>
+
+  <!-- Temperament Field -->
+  <div class="form-group" style="margin-bottom: 15px;">
+    <label for="temperament" class="form-label" style="display: block; font-weight: bold; margin-bottom: 5px;">Date</label>
+    <input type="text" id="temperament" name="createdAt" class="form-control" required
+           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"
+           [ngModel]="contactObj?.createdAt | date:'dd/MM/yyyy, h:mm a'" readonly>    <span class="text-danger" id="temperament-error" style="color: red; font-size: 0.875em;"></span>
+  </div>
+
+  <!-- Special Needs Field -->
+  <div class="form-group" style="margin-bottom: 15px;">
+    <label for="specialNeeds" class="form-label" style="display: block; font-weight: bold; margin-bottom: 5px;">Reply Message</label>
+    <textarea type="text" id="specialNeeds" name="replyMessage" class="form-control" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" ngModel [value]="contactObj?.replyMessage">{{contactObj?.replyMessage}}</textarea>
+    <span class="text-danger" id="specialNeeds-error" style="color: red; font-size: 0.875em;"></span>
+  </div>
+
+  <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;background-color:black;">Reply</button>
+</form>

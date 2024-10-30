@@ -1,0 +1,13 @@
+.pet.service .contact .faq form button {
+  width: auto !important;
+  color: var(--pt_orange);
+  font-weight: bold;
+  border: 2px solid var(--pt_orange);
+  background: var(--pt_white);
+  border-radius: 50px;
+  border-top-right-radius: 0px;
+  padding: 20px 35px !important;
+  line-height: 0px;
+  overflow: hidden;
+  transition: 0.7s;
+}

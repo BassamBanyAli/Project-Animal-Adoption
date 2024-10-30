@@ -1,0 +1,109 @@
+
+<div class="container my-5">
+  <h2 class="mb-4">Adoption Applications</h2>
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Application ID</th>
+        <th>Adopter Name</th>
+        <th>Animal Image</th>
+        <th>Application Date</th>
+        <th>Status</th>
+        <th>User Info</th>
+        <th>Animal Info</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataApplicationArray">
+        <td>{{item.applicationId}}</td>
+        <td>{{item.adopterName}}</td>
+        <td><img src="https://localhost:7269/api/Animals1/getImages/{{item.animalImage}}" alt="Animal Image" class="img-fluid"></td>
+        <td>{{ item.applicationDate | date: 'yyyy-MM-dd' }}</td>
+        <td><span>{{item.status}}</span></td>
+        <td>
+          <button class="btn btn-info btn-sm" (click)="getUserInfo(item.userId)">Get User Information</button>
+        </td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="getAnimalInfo(item.animalId)">Animal Info</button>
+        </td>
+        <td>
+          <!-- عرض الأزرار فقط إذا كانت الحالة Pending -->
+          <button *ngIf="item.status === 'Pending'" class="btn btn-success btn-sm" (click)="updateStatus(item.applicationId, 'Approved')">
+            Approve
+          </button>
+          <button *ngIf="item.status === 'Pending'" class="btn btn-danger btn-sm" (click)="updateStatus(item.applicationId, 'Rejected')">
+            Reject
+          </button>
+        </td>
+
+
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <div class="modal-backdrop" *ngIf="showUserInfoModal"></div>
+  <!-- Modal for User-Specific Information -->
+  <div *ngIf="showUserInfoModal" class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+    <div class="modal-dialog" role="document" style="max-width: 80%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">User Information</h5>
+          <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Full Name:</strong> {{userInfo.fullName}}</p>
+          <p><strong>Email:</strong> {{userInfo.email}}</p>
+          <p><strong>Address:</strong> {{userInfo.address}}</p>
+          <p><strong>Medical Status:</strong> {{userInfo.medicalStatus}}</p>
+          <p><strong>Flat Type:</strong> {{userInfo.flatType}}</p>
+          <p><strong>Financial Status:</strong> {{userInfo.finaincalStatus}}</p>
+          <p><strong>Have Kids:</strong> {{userInfo.haveKids ? 'Yes' : 'No'}}</p>
+          <p><strong>More Details:</strong> {{userInfo.moreDetails}}</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal for Animal Information -->
+  <div class="modal-backdrop" *ngIf="showAnimalInfoModal"></div>
+  <div *ngIf="showAnimalInfoModal" class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+    <div class="modal-dialog" role="document" style="max-width: 80%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Animal Information</h5>
+          <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Name:</strong> {{animalInfo.name}}</p>
+          <p><strong>Breed:</strong> {{animalInfo.breed}}</p>
+          <p><strong>Age:</strong> {{animalInfo.age}}</p>
+          <p><strong>Size:</strong> {{animalInfo.size}}</p>
+          <p><strong>Temperament:</strong> {{animalInfo.temperament}}</p>
+          <p><strong>Special Needs:</strong> {{animalInfo.specialNeeds}}</p>
+          <p><strong>Description:</strong> {{animalInfo.description}}</p>
+          <img *ngIf="animalInfo.image1" src="https://localhost:7269/api/Animals1/getImages/{{animalInfo.image1}}" alt="Animal Image" class="img-fluid"style="width:75px">
+          <!-- Add more images if needed -->
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

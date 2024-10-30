@@ -1,0 +1,65 @@
+<div class="main-wrapper pet login">
+
+
+
+
+  <div class="pet service">
+    <section class="contact">
+      <div class="container">
+        <div class="card">
+          <div class="content">
+            <div class="heading text-center">
+              <p class="wow fadeInUp">
+                <span class="purple"><i class="fas fa-paw"></i> </span><span class="orange"><i class="fas fa-paw"></i> </span><span class="purple">
+                  <i class="fas fa-paw"></i>
+                </span>
+              </p>
+              <h3>
+                <span class="wow pulse" data-wow-delay="1s">
+                  Login
+                </span>
+              </h3>
+            </div>
+            <div class="faq wow fadeInRight mt-4">
+              <form  #login="ngForm" (ngSubmit)="loginUser1(login.value)">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <input type="email" name="email" id="email" placeholder="Email"
+                             class="form-control" required ngModel> 
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <input type="password" name="password" id="password" class="form-control"
+                             placeholder="Password" required ngModel>
+                    </div>
+                  </div>
+                  <div class="link text-center">
+                    Don't have an account?
+                    <a routerLink="/register" class="d-inline-block" title="Register">Register</a>
+
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group text-center">
+                      <button type="submit" class="btn form-control"> <span style="color:wheat">Login</span></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="pet">
+    <a id="back2Top" title="Back to top" href="#" class="hvr-radial-in"><i class="fas fa-paw"></i></a>
+  </div>
+
+ 
+
+
+</div>

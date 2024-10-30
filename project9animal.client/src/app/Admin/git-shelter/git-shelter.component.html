@@ -1,0 +1,38 @@
+<div class="container mt-4" style="margin-left: 20px;">
+  <!-- Adjust for sidebar -->
+  <h2 class="text-center mb-4">List of Shelters</h2>
+  <div class="d-flex justify-content-start mb-3">
+    <a routerLink="/dashboard/AddShelter" class="btn btn-warning1 btn-lg">Add Shelter</a>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Shelter ID</th>
+        <th>Shelter Name</th>
+        <th>Description</th>
+        <th>Contact Email</th>
+        <th>Phone</th>
+        <th>Opening Time</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let shelter of shelters">
+        <td>{{ shelter.shelterId }}</td>
+        <td>{{ shelter.shelterName }}</td>
+        <td>{{ shelter.description }}</td>
+        <td>{{ shelter.contactEmail }}</td>
+        <td>{{ shelter.phone }}</td>
+        <td>{{ shelter.openingTime }}</td>
+        <td>{{ shelter.address }}</td>
+        <td>
+          <div class="d-flex justify-content-around">
+            <button class="btn btn-danger btn-sm" (click)="deleteShelters(shelter.shelterId)">Delete</button>
+            <a routerLink="/dashboard/EditShelter/{{shelter.shelterId }}" class="btn btn-warning btn-sm">Edit</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

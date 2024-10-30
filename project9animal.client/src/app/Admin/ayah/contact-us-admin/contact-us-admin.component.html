@@ -1,0 +1,38 @@
+<div class="container">
+  <p class="text-center font-weight-bold" style="font-weight:600;font-size:30px">ContactUs Request</p>
+
+  
+
+  <div class="table-container" style="max-height: 600px; overflow-y: auto;">
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Message</th>
+          <th scope="col">Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let con of contactObj" class="animated fadeIn">
+          <td>{{ con.name }}</td>
+          <td>{{ con.email }}</td>
+          <td>{{ con.subject }}</td>
+          <td>{{ con.message.length > 15 ? (con.message | slice:0:20) + '...' : con.message }}</td>
+          <td>{{ con.createdAt }}</td>
+          <td>{{ con.replyMessage ? 'Answered' : 'Unanswered' }}</td>
+
+          <td>
+            <div class="d-flex justify-content-around">
+              <!--<button class="btn btn-danger btn-sm" (click)="deleteAnimals(animal.animalId)">Delete</button>-->
+              <a routerLink="/dashboard/contactUsForm/{{con.id}}" class="btn btn-warning btn-sm">Reply</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

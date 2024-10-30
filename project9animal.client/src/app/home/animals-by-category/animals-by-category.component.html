@@ -1,0 +1,75 @@
+<section class="pets-box">
+  <div class="auto-container">
+    <div class="inner-container" style="background-image:url(images/background/11.png)">
+      <h2>Find Your Pet</h2>
+
+      <!--<div class="pets-search-form">
+        <form (ngSubmit)="applyFilters()" #filterForm="ngForm">
+          <div class="row clearfix">
+            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+              <select class="custom-select-box" [(ngModel)]="filters.categoryName" name="categoryName" required>
+                <option value="">Select Pet Type</option>
+                <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+              <input type="text" class="custom-select-box" placeholder="Select Animals Name"
+                     [(ngModel)]="filters.name" name="name" />
+            </div>
+
+            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+              <input type="text" class="custom-select-box" placeholder="Enter shelterName"
+                     [(ngModel)]="filters.shelterName" name="shelterName" />
+            </div>
+
+            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+              <button class="theme-btn btn-style-two" type="submit" [disabled]="filterForm.invalid">Search Now</button>
+            </div>
+          </div>
+        </form>
+      </div>-->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="pets-container">
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!--Pets Block-->
+      <div class="pet-block col-md-4 col-sm-6 col-xs-12" *ngFor="let animal of animals">
+        <div class="inner-box">
+          <div class="image">
+            <img src="https://localhost:7269/api/Animals1/getImages/{{animal.image1}}" alt="{{animal.name}}" />
+            <div class="overlay-box">
+              <div class="overlay-inner">
+                <div class="content">
+                  <ul>
+                    <li><a routerLink="/AnimalsDetails/{{animal.animalId}}">view profile</a></li>
+                    <li class="share"><a routerLink="/AnimalsDetails/{{animal.animalId}}"><span class="fa fa-share-alt"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lower-content">
+            <h3><a routerLink="/AnimalsDetails/{{animal.animalId}}">{{animal.name}}</a></h3>
+            <ul>
+              <li>{{animal.age}}</li>
+              <li>{{animal.breed}}</li>
+              <li>{{animal.adoptionStatus}}</li>
+            </ul>
+            <a routerLink="/AnimalsDetails/{{animal.animalId}}" class="theme-btn btn-style-eight">adopt me</a>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="loading" class="col-12 text-center">
+        <p>Loading animals...</p>
+      </div>
+    </div>
+  </div>
+</section>

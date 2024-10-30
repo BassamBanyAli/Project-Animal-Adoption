@@ -1,0 +1,43 @@
+
+<section class="blog-page-section">
+  <div class="auto-container">
+    <div class="row clearfix">
+
+
+      <div class="table-responsive">
+        <table class="table table-borderless mb-0">
+          <thead>
+            <tr>
+              <th scope="col">Photo</th>
+              <th scope="col">Title</th>
+              <th scope="col">Date</th>
+              <th scope="col">Likes</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let story of successStories">
+              <td>
+                <img src="https://localhost:7269/api/Bassam/getImage/{{story.photoUrl1}}" alt="Story Image" width="100" />
+              </td>
+              <td><a [routerLink]="['/dashboard/storyDetails', story.storyId]" >{{ story.title }}</a></td>
+              <td>{{ story.storyDate | date: 'dd MMM' }}</td>
+              <td>{{ story.likes.length }}</td>
+              <td>
+                <a [routerLink]="['/dashboard/storyDetails', story.storyId]"  class="theme-btn btn-style-eight">Read more</a>
+                <button type="button" class="btn btn-danger btn-sm px-3" (click)="deleteStory(story.storyId)">
+                  <i class="fas fa-times"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <!-- Styled Pagination -->
+
+    <!-- End Styled Pagination -->
+  </div>
+</section>
+<!-- End Blog Page Section -->
